@@ -1,12 +1,10 @@
 import serial
-import RPi.GPIO as GPIO
 import signal
 
 def end_read(signal,frame):
     global loop
     print("Ctrl+C captured, ending read from arduino.")
     loop = False
-    GPIO.cleanup()
 
 signal.signal(signal.SIGINT, end_read)
 
