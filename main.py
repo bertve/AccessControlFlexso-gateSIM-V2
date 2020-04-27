@@ -1,8 +1,8 @@
 import RPi.GPIO as GPIO
 import time
 import signal
-from colorama import init,Fore,Back,Style
 import network
+from PN532 import PN532
 
 def end_read(signal,frame):
     global continue_reading
@@ -16,12 +16,21 @@ def check_if_user_auth(auth_ids,incoming_nfc_message):
             return True
     return False
 
-init(convert=True)
+def callbackPN532(tag, data):
+    global incoming_data
+    incoming_data = data
+
+
+# ctrl + c stop
 signal.signal(signal.SIGINT, end_read)
 continue_reading = True
 
+# device uart, aid for android, callback
+pn532 = PN532('tty:S0', 'A0000001020304', callbackPN532)
+incoming_data = ""
+
+
 # Welcome message
-print(Fore.WHITE+ Back.GREEN + "aids")
 print(" _______________________________ ")
 print("|                               |")
 print("|  Welcome to GATESIMBIRT v2.0  |")
@@ -37,7 +46,7 @@ print("|              \|               |")
 print("|                               |")
 print("|     Press Ctrl-C to stop.     |")
 print("|_______________________________|")
-print(Style.RESET_ALL)
+print("")
 
 # setup mode gpio (according to gpio numbers)
 GPIO.setmode(GPIO.BCM)
@@ -52,33 +61,36 @@ RED_LED = 6
 GPIO.setup(RED_LED, GPIO.OUT)
 GPIO.output(RED_LED, GPIO.LOW)
 
-#harcoded incoming message
-incoming_nfc_message_succes = 3 #vaneebe@cronos.be
-incoming_nfc_message_fail = 4
-#change this to test
-incoming_nfc_message = incoming_nfc_message_fail
-
 #harcoded office id
 office_id = 1
 
 while continue_reading:
+    listen = pn532.listen()
+    if not listen:
+        break
+
     # get authorized users
     auth_ids = network.get_auth_ids_by_office_id(office_id)
-    print("incoming message: "+ str(incoming_nfc_message))
-    if(check_if_user_auth(auth_ids,incoming_nfc_message)):
-        print(Fore.GREEN)
+
+    #convert hexstring to asci string
+    incoming_data_ascii = bytes.fromhex(str(incoming_data)).decode("ASCII")
+    print("incoming message hex: "+ str(incoming_data))
+    print("incoming message ascii: " + incoming_data_ascii)
+
+    if(check_if_user_auth(auth_ids,incoming_data)):
         print("ACCESS GRANTED")
         GPIO.output(GREEN_LED, GPIO.HIGH)
         time.sleep(3)
         GPIO.output(GREEN_LED, GPIO.LOW)
     else:
-        print(Fore.RED)
         print("ACCESS DENIED")
         GPIO.output(RED_LED, GPIO.HIGH)
         time.sleep(3)
         GPIO.output(RED_LED, GPIO.LOW)
+    print("")
 
 
+pn532.close()
 
 
 
