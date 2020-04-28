@@ -40,25 +40,6 @@ continue_reading = True
 pn532 = PN532('tty:S0', 'A0000001020304', callbackPN532)
 incoming_data = ""
 
-
-# Welcome message
-print(" _______________________________ ")
-print("|                               |")
-print("|  Welcome to GATESIMBIRT v2.0  |")
-print("|_______________________________|")
-print("|             _____             |")
-print("|            |\    |            |")
-print("|            | \   |            |")
-print("|            |  |  |            |")
-print("|            | \|  |            |")
-print("|            \  |__|            |")
-print("|             \ |               |")
-print("|              \|               |")
-print("|                               |")
-print("|     Press Ctrl-C to stop.     |")
-print("|_______________________________|")
-print("")
-
 # setup mode gpio (according to gpio numbers)
 GPIO.setmode(GPIO.BCM)
 
@@ -75,13 +56,30 @@ GPIO.output(RED_LED, GPIO.LOW)
 #harcoded office id (sesamstraat 123)
 office_id = 1
 
+# Welcome message
+print(" _______________________________ ")
+print("|                               |")
+print("|    Welcome to GATESIM v2.0    |")
+print("|                               |")
+print("|          ~ By BVE ~           |")
+print("|_______________________________|")
+print("|             _____             |")
+print("|            |\    |            |")
+print("|            | \   |            |")
+print("|            |  |  |            |")
+print("|            | \|  |            |")
+print("|            \  |__|            |")
+print("|             \ |               |")
+print("|              \|               |")
+print("|                               |")
+print("|     Press Ctrl-C to stop.     |")
+print("|_______________________________|")
+print("")
+
 while continue_reading:
     listen = pn532.listen()
     if not listen:
         break
-
-    # get authorized users
-    auth_ids = network.get_auth_ids_by_office_id(office_id)
 
     #convert hexstring to asci string and split data
     print("incoming data hex: "+ str(incoming_data))
