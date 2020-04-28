@@ -15,12 +15,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="added arduino connection">
-      <change afterPath="$PROJECT_DIR$/PN532.py" afterDir="false" />
+    <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="nfc communication works">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/arduino.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readAndroid_ic2_shield/readAndroid_ic2_shield.ino" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +33,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="7a15a8f9-fdc2-45d0-8107-fbb470978b47" />
   </component>
   <component name="ProjectId" id="1acrJR5O7HhWyuhFGtHYxJHh78a" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -162,7 +162,8 @@
       <workItem from="1587914885904" duration="141000" />
       <workItem from="1587995319174" duration="554000" />
       <workItem from="1588004518758" duration="742000" />
-      <workItem from="1588007609505" duration="4588000" />
+      <workItem from="1588007609505" duration="8565000" />
+      <workItem from="1588073927162" duration="4854000" />
     </task>
     <task id="LOCAL-00001" summary="added arduino connection">
       <created>1587407418213</created>
@@ -171,7 +172,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587407418213</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="nfc communication works">
+      <created>1588012354028</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588012354028</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,7 +199,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added arduino connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="added arduino connection" />
+    <MESSAGE value="nfc communication works" />
+    <option name="LAST_COMMIT_MESSAGE" value="nfc communication works" />
   </component>
   <component name="WindowStateProjectService">
     <state x="199" y="108" width="426" height="484" key="FileChooserDialogImpl" timestamp="1587995377180">
@@ -199,9 +208,10 @@
     </state>
     <state x="199" y="108" key="FileChooserDialogImpl/0.28.1360.740@0.28.1360.740" timestamp="1587995377180" />
     <state x="199" y="115" width="426" height="484" key="FileChooserDialogImpl/0.36.1360.732@0.36.1360.732" timestamp="1587047610674" />
-    <state x="541" y="326" key="Github.Dialog.Accounts.Choose" timestamp="1587407439383">
-      <screen x="0" y="36" width="1360" height="732" />
+    <state x="541" y="321" width="274" height="158" key="Github.Dialog.Accounts.Choose" timestamp="1588012380316">
+      <screen x="0" y="28" width="1360" height="740" />
     </state>
+    <state x="541" y="321" width="274" height="158" key="Github.Dialog.Accounts.Choose/0.28.1360.740@0.28.1360.740" timestamp="1588012380316" />
     <state x="541" y="326" key="Github.Dialog.Accounts.Choose/0.36.1360.732@0.36.1360.732" timestamp="1587407439383" />
     <state x="498" y="301" key="Github.ShareDialog" timestamp="1587058733942">
       <screen x="0" y="36" width="1360" height="732" />
@@ -211,38 +221,39 @@
       <screen x="0" y="36" width="1360" height="732" />
     </state>
     <state x="442" y="93" width="466" height="615" key="Github.UntrackedFilesDialog/0.36.1360.732@0.36.1360.732" timestamp="1587058751132" />
-    <state width="1316" height="247" key="GridCell.Tab.0.bottom" timestamp="1588012179007">
+    <state width="1316" height="175" key="GridCell.Tab.0.bottom" timestamp="1588078831952">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state width="1316" height="247" key="GridCell.Tab.0.bottom/0.28.1360.740@0.28.1360.740" timestamp="1588012179007" />
+    <state width="1316" height="175" key="GridCell.Tab.0.bottom/0.28.1360.740@0.28.1360.740" timestamp="1588078831952" />
     <state width="1876" height="866" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822736" />
     <state width="1316" height="159" key="GridCell.Tab.0.bottom/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
-    <state width="1316" height="247" key="GridCell.Tab.0.center" timestamp="1588012179005">
+    <state width="1316" height="175" key="GridCell.Tab.0.center" timestamp="1588078831951">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state width="1316" height="247" key="GridCell.Tab.0.center/0.28.1360.740@0.28.1360.740" timestamp="1588012179005" />
+    <state width="1316" height="175" key="GridCell.Tab.0.center/0.28.1360.740@0.28.1360.740" timestamp="1588078831951" />
     <state width="1876" height="866" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822734" />
     <state width="1316" height="159" key="GridCell.Tab.0.center/0.36.1360.732@0.36.1360.732" timestamp="1587486335569" />
-    <state width="1316" height="247" key="GridCell.Tab.0.left" timestamp="1588012179003">
+    <state width="1316" height="175" key="GridCell.Tab.0.left" timestamp="1588078831950">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state width="1316" height="247" key="GridCell.Tab.0.left/0.28.1360.740@0.28.1360.740" timestamp="1588012179003" />
+    <state width="1316" height="175" key="GridCell.Tab.0.left/0.28.1360.740@0.28.1360.740" timestamp="1588078831950" />
     <state width="1876" height="866" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822733" />
     <state width="1316" height="159" key="GridCell.Tab.0.left/0.36.1360.732@0.36.1360.732" timestamp="1587486335568" />
-    <state width="1316" height="247" key="GridCell.Tab.0.right" timestamp="1588012179006">
+    <state width="1316" height="175" key="GridCell.Tab.0.right" timestamp="1588078831952">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state width="1316" height="247" key="GridCell.Tab.0.right/0.28.1360.740@0.28.1360.740" timestamp="1588012179006" />
+    <state width="1316" height="175" key="GridCell.Tab.0.right/0.28.1360.740@0.28.1360.740" timestamp="1588078831952" />
     <state width="1876" height="866" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822735" />
     <state width="1316" height="159" key="GridCell.Tab.0.right/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
-    <state x="0" y="28" width="992" height="738" key="SettingsEditor" timestamp="1588010547708">
+    <state x="0" y="28" width="992" height="738" key="SettingsEditor" timestamp="1588015129010">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state x="0" y="28" width="992" height="738" key="SettingsEditor/0.28.1360.740@0.28.1360.740" timestamp="1588010547708" />
+    <state x="0" y="28" width="992" height="738" key="SettingsEditor/0.28.1360.740@0.28.1360.740" timestamp="1588015129010" />
     <state x="0" y="36" key="SettingsEditor/0.36.1360.732@0.36.1360.732" timestamp="1587383596395" />
-    <state x="274" y="137" width="802" height="528" key="Vcs.Push.Dialog.v2" timestamp="1587407428154">
-      <screen x="0" y="36" width="1360" height="732" />
+    <state x="274" y="130" width="802" height="528" key="Vcs.Push.Dialog.v2" timestamp="1588012370841">
+      <screen x="0" y="28" width="1360" height="740" />
     </state>
+    <state x="274" y="130" key="Vcs.Push.Dialog.v2/0.28.1360.740@0.28.1360.740" timestamp="1588012370841" />
     <state x="274" y="137" width="802" height="528" key="Vcs.Push.Dialog.v2/0.36.1360.732@0.36.1360.732" timestamp="1587407428154" />
     <state x="171" y="97" width="633" height="428" key="git4idea.merge.GitPullDialog" timestamp="1588007821556">
       <screen x="0" y="28" width="1360" height="740" />
@@ -259,7 +270,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$arduino.coverage" NAME="arduino Coverage Results" MODIFIED="1587910147975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1588012178942" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1588078831896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$network.coverage" NAME="network Coverage Results" MODIFIED="1587057492722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
