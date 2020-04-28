@@ -9,6 +9,7 @@ def end_read(signal,frame):
     print("Ctrl+C captured, ending read.")
     continue_reading = False
     GPIO.cleanup()
+    pn532.close()
 
 def check_if_user_auth(user_id):
     global office_id
@@ -55,6 +56,7 @@ GPIO.output(RED_LED, GPIO.LOW)
 
 #harcoded office id (sesamstraat 123)
 office_id = 1
+info_array = network.get_office_info(office_id)
 
 # Welcome message
 print(" _______________________________ ")
@@ -74,6 +76,11 @@ print("|              \|               |")
 print("|                               |")
 print("|     Press Ctrl-C to stop.     |")
 print("|_______________________________|")
+print("")
+print("simulated gate:")
+for i in info_array:
+    print(i)
+
 print("")
 
 while continue_reading:
@@ -106,4 +113,3 @@ while continue_reading:
     print("_________________________________")
     print("")
 
-pn532.close()
