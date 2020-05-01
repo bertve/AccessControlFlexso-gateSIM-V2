@@ -3,6 +3,8 @@ import time
 import signal
 import network
 from PN532 import PN532
+from models import KeyId
+
 
 def end_read(signal,frame):
     global continue_reading
@@ -11,27 +13,34 @@ def end_read(signal,frame):
     GPIO.cleanup()
     pn532.close()
 
-def check_if_user_auth(user_id):
-    global office_id
-    auth_ids = network.get_auth_ids_by_office_id(office_id)
-    print("authorized IDs:")
-    print(auth_ids)
-    for id in auth_ids:
-        if(str(id) == user_id):
-            return True
-    return False
-
 def check_office(incoming_office_id):
     global office_id
-    return str(office_id) == incoming_office_id
+    res = str(office_id) == incoming_office_id
+    if res:
+        print("\tThe correct token has been passed")
+    else:
+        wrong_office = network.get_office_info(incoming_office_id)
+        print("\tAn incorrect token has been passed,")
+        print("\ttoken was meant for office:")
+        for i in wrong_office:
+            print("\t\t"+i)
+
+    return res
 
 def callbackPN532(tag, data):
     global incoming_data
     incoming_data = data
 
-def is_authorized(incoming_user_id,incoming_office_id):
-    return check_if_user_auth(incoming_user_id) & check_office(incoming_office_id)
+def check_token(token,id):
+    keyValidation = network.validate_token(token,id)
+    print( "\t"+keyValidation.message)
+    print()
+    return keyValidation.succes
 
+def is_authorized(incoming_user_id,incoming_office_id,device_id,token):
+    print("VALIDATION:")
+    keyId = KeyId(int(incoming_user_id),int(incoming_office_id),device_id)
+    return check_office(incoming_office_id) & check_token(token,keyId)
 
 # ctrl + c stop
 signal.signal(signal.SIGINT, end_read)
@@ -80,8 +89,8 @@ print("")
 print("simulated gate:")
 for i in info_array:
     print(i)
-
 print("")
+
 
 while continue_reading:
     listen = pn532.listen()
@@ -91,25 +100,34 @@ while continue_reading:
     #convert hexstring to asci string and split data
     print("incoming data hex: "+ str(incoming_data))
     incoming_data_string = str(incoming_data)
-    incoming_ids_hex = incoming_data_string[0:len(incoming_data_string)-4]
-    incoming_ids_ascii = bytes.fromhex(incoming_ids_hex).decode("ASCII").split(";")
 
-    incoming_user_id = incoming_ids_ascii[0]
-    incoming_office_id = incoming_ids_ascii[1]
-    print("incoming user id: "+str(incoming_user_id))
-    print("incoming office id: "+str(incoming_office_id))
+    if incoming_data_string[len(incoming_data_string) - 4: len(incoming_data_string)] == "9000":
+        incoming_ids_hex = incoming_data_string[0:len(incoming_data_string)-4]
+        incoming_ids_ascii = bytes.fromhex(incoming_ids_hex).decode("ASCII").split(";")
 
+        incoming_user_id = incoming_ids_ascii[0]
+        incoming_office_id = incoming_ids_ascii[1]
+        incoming_device_id = incoming_ids_ascii[2]
+        incoming_token = incoming_ids_ascii[3]
 
-    if(is_authorized(incoming_user_id,incoming_office_id)):
-        print("ACCESS GRANTED")
-        GPIO.output(GREEN_LED, GPIO.HIGH)
-        time.sleep(3)
-        GPIO.output(GREEN_LED, GPIO.LOW)
+        print("incoming user id: "+str(incoming_user_id))
+        print("incoming office id: "+str(incoming_office_id))
+        print("incoming device id: "+str(incoming_device_id))
+        print("incoming token: " + str(incoming_token))
+        print("")
+
+        if(is_authorized(incoming_user_id,incoming_office_id,incoming_device_id,incoming_token)):
+            print("ACCESS GRANTED")
+            GPIO.output(GREEN_LED, GPIO.HIGH)
+            time.sleep(3)
+            GPIO.output(GREEN_LED, GPIO.LOW)
+        else:
+            print(" ACCESS DENIED")
+            GPIO.output(RED_LED, GPIO.HIGH)
+            time.sleep(3)
+            GPIO.output(RED_LED, GPIO.LOW)
     else:
-        print(" ACCESS DENIED")
-        GPIO.output(RED_LED, GPIO.HIGH)
-        time.sleep(3)
-        GPIO.output(RED_LED, GPIO.LOW)
+        print("response APDU not supported!")
+
     print("_________________________________")
     print("")
-
