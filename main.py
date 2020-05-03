@@ -4,7 +4,7 @@ import signal
 import network
 from PN532 import PN532
 from models import KeyId
-
+from tabulate import tabulate
 
 def end_read(signal,frame):
     global continue_reading
@@ -42,6 +42,24 @@ def is_authorized(incoming_user_id,incoming_office_id,device_id,token):
     keyId = KeyId(int(incoming_user_id),int(incoming_office_id),device_id)
     return check_office(incoming_office_id) & check_token(token,keyId)
 
+def print_office_selection_menu():
+    menu = network.get_offices_menu()
+    list_offices_by_company_name = []
+    currentName = " "
+    count=-1
+    for item in menu:
+        if currentName != item[1]:
+            currentName = item[1]
+            list_offices_by_company_name.append(currentName,[])
+            count+=1
+        list_offices_by_company_name[count][1].append([item[0],item[2]])
+
+    for item in list_offices_by_company_name:
+        print(item[0])
+        print( tabulate(item[1], headers=['ID', 'address']))
+        print(" ")
+    print(" ")
+
 # ctrl + c stop
 signal.signal(signal.SIGINT, end_read)
 continue_reading = True
@@ -63,10 +81,6 @@ RED_LED = 6
 GPIO.setup(RED_LED, GPIO.OUT)
 GPIO.output(RED_LED, GPIO.LOW)
 
-#harcoded office id (sesamstraat 123)
-office_id = 1
-info_array = network.get_office_info(office_id)
-
 # Welcome message
 print(" _______________________________ ")
 print("|                               |")
@@ -86,6 +100,15 @@ print("|                               |")
 print("|     Press Ctrl-C to stop.     |")
 print("|_______________________________|")
 print("")
+print_office_selection_menu()
+#TODO: check if number!!
+office_id = ""
+while type(office_id) != type(0):
+    office_id = input("What office do you want to simulate:")
+
+#harcoded office id (sesamstraat 123)
+info_array = network.get_office_info(office_id)
+
 print("simulated gate:")
 for i in info_array:
     print(i)

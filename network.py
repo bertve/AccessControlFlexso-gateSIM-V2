@@ -1,5 +1,6 @@
 import requests
 import json
+import models
 from models import KeyValidation,KeyId
 
 base_url = "https://key-api.cfapps.eu10.hana.ondemand.com/api/gate/"
@@ -21,11 +22,34 @@ def validate_token(token,id):
         "deviceId": id.deviceId
     }
     id_json = json.dumps(id_dict)
-    req_key_validation = requests.post(base_url+"validate/"+token,json= id_json,headers={"Content-Type":"application/json"})
+    req_key_validation = requests.post(base_url+"validate/"+token,json= id_json)
     req_key_validation_json = req_key_validation.json()
     return KeyValidation(req_key_validation_json['succes'],
                          req_key_validation_json['message'],
                          req_key_validation_json['data'])
+
+#returns array row = office ; col1 = id ; col2 = companyname ; col3= address
+def get_offices_menu():
+     req_office_menu = requests.get(base_url+"gateSelectionMenu/")
+     req_office_menu_json = req_office_menu.json()
+     res = [len(req_office_menu_json)][3]
+     rowCount = 0
+     for o in req_office_menu_json:
+         res[rowCount][0] = o['officeId']
+         res[rowCount][1] = o['company']['name']
+         res[rowCount][2] = models.Address(o['address']['street'],
+                                           o['address']['houseNumber'],
+                                           o['address']['postalCode'],
+                                           o['address']['town'],
+                                           o['address']['country'])
+         rowCount += 1
+
+     return res
+
+
+
+
+
 
 
 
