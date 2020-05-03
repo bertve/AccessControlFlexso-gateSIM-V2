@@ -32,17 +32,9 @@ def validate_token(token,id):
 def get_offices_menu():
      req_office_menu = requests.get(base_url+"gateSelectionMenu/")
      req_office_menu_json = req_office_menu.json()
-     res = [len(req_office_menu_json)][3]
-     rowCount = 0
+     res = []
      for o in req_office_menu_json:
-         res[rowCount][0] = o['officeId']
-         res[rowCount][1] = o['company']['name']
-         res[rowCount][2] = models.Address(o['address']['street'],
-                                           o['address']['houseNumber'],
-                                           o['address']['postalCode'],
-                                           o['address']['town'],
-                                           o['address']['country'])
-         rowCount += 1
+         res.append([o['officeId'],o['company']['name'],models.Address(o['address']['street'],o['address']['houseNumber'],o['address']['postalCode'],o['address']['town'],o['address']['country'])])
 
      return res
 

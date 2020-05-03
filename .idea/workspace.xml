@@ -15,9 +15,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="show address info">
-      <change afterPath="$PROJECT_DIR$/key_id.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models.py" afterDir="false" />
+    <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="deleted json file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/network.py" afterDir="false" />
@@ -168,7 +166,8 @@
       <workItem from="1588007609505" duration="8565000" />
       <workItem from="1588073927162" duration="12448000" />
       <workItem from="1588259516995" duration="7631000" />
-      <workItem from="1588330542602" duration="11848000" />
+      <workItem from="1588330542602" duration="14042000" />
+      <workItem from="1588531235410" duration="2260000" />
     </task>
     <task id="LOCAL-00001" summary="added arduino connection">
       <created>1587407418213</created>
@@ -205,7 +204,21 @@
       <option name="project" value="LOCAL" />
       <updated>1588097912564</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="support token exchange">
+      <created>1588351619021</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1588351619021</updated>
+    </task>
+    <task id="LOCAL-00007" summary="deleted json file">
+      <created>1588351753204</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1588351753204</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +242,9 @@
     <MESSAGE value="authorize person (no Jwt)" />
     <MESSAGE value="refactored" />
     <MESSAGE value="show address info" />
-    <option name="LAST_COMMIT_MESSAGE" value="show address info" />
+    <MESSAGE value="support token exchange" />
+    <MESSAGE value="deleted json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="deleted json file" />
   </component>
   <component name="WindowStateProjectService">
     <state x="199" y="108" width="426" height="484" key="FileChooserDialogImpl" timestamp="1587995377180">
@@ -237,10 +252,10 @@
     </state>
     <state x="199" y="108" key="FileChooserDialogImpl/0.28.1360.740@0.28.1360.740" timestamp="1587995377180" />
     <state x="199" y="115" width="426" height="484" key="FileChooserDialogImpl/0.36.1360.732@0.36.1360.732" timestamp="1587047610674" />
-    <state x="541" y="321" width="274" height="166" key="Github.Dialog.Accounts.Choose" timestamp="1588078973247">
+    <state x="541" y="321" width="274" height="166" key="Github.Dialog.Accounts.Choose" timestamp="1588351700223">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state x="541" y="321" width="274" height="166" key="Github.Dialog.Accounts.Choose/0.28.1360.740@0.28.1360.740" timestamp="1588078973247" />
+    <state x="541" y="321" width="274" height="166" key="Github.Dialog.Accounts.Choose/0.28.1360.740@0.28.1360.740" timestamp="1588351700223" />
     <state x="541" y="326" key="Github.Dialog.Accounts.Choose/0.36.1360.732@0.36.1360.732" timestamp="1587407439383" />
     <state x="498" y="301" key="Github.ShareDialog" timestamp="1587058733942">
       <screen x="0" y="36" width="1360" height="732" />
@@ -250,48 +265,48 @@
       <screen x="0" y="36" width="1360" height="732" />
     </state>
     <state x="442" y="93" width="466" height="615" key="Github.UntrackedFilesDialog/0.36.1360.732@0.36.1360.732" timestamp="1587058751132" />
-    <state width="1316" height="347" key="GridCell.Tab.0.bottom" timestamp="1588351455607">
+    <state width="1316" height="554" key="GridCell.Tab.0.bottom" timestamp="1588533479060">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
     <state width="980" height="310" key="GridCell.Tab.0.bottom/0.28.1024.740@0.28.1024.740" timestamp="1588270644364" />
-    <state width="1316" height="347" key="GridCell.Tab.0.bottom/0.28.1360.740@0.28.1360.740" timestamp="1588351455607" />
+    <state width="1316" height="554" key="GridCell.Tab.0.bottom/0.28.1360.740@0.28.1360.740" timestamp="1588533479060" />
     <state width="1876" height="866" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822736" />
     <state width="1316" height="159" key="GridCell.Tab.0.bottom/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
-    <state width="1316" height="347" key="GridCell.Tab.0.center" timestamp="1588351455605">
+    <state width="1316" height="554" key="GridCell.Tab.0.center" timestamp="1588533479056">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
     <state width="980" height="310" key="GridCell.Tab.0.center/0.28.1024.740@0.28.1024.740" timestamp="1588270644362" />
-    <state width="1316" height="347" key="GridCell.Tab.0.center/0.28.1360.740@0.28.1360.740" timestamp="1588351455605" />
+    <state width="1316" height="554" key="GridCell.Tab.0.center/0.28.1360.740@0.28.1360.740" timestamp="1588533479056" />
     <state width="1876" height="866" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822734" />
     <state width="1316" height="159" key="GridCell.Tab.0.center/0.36.1360.732@0.36.1360.732" timestamp="1587486335569" />
-    <state width="1316" height="347" key="GridCell.Tab.0.left" timestamp="1588351455603">
+    <state width="1316" height="554" key="GridCell.Tab.0.left" timestamp="1588533479054">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
     <state width="980" height="310" key="GridCell.Tab.0.left/0.28.1024.740@0.28.1024.740" timestamp="1588270644361" />
-    <state width="1316" height="347" key="GridCell.Tab.0.left/0.28.1360.740@0.28.1360.740" timestamp="1588351455603" />
+    <state width="1316" height="554" key="GridCell.Tab.0.left/0.28.1360.740@0.28.1360.740" timestamp="1588533479054" />
     <state width="1876" height="866" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822733" />
     <state width="1316" height="159" key="GridCell.Tab.0.left/0.36.1360.732@0.36.1360.732" timestamp="1587486335568" />
-    <state width="1316" height="347" key="GridCell.Tab.0.right" timestamp="1588351455606">
+    <state width="1316" height="554" key="GridCell.Tab.0.right" timestamp="1588533479058">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
     <state width="980" height="310" key="GridCell.Tab.0.right/0.28.1024.740@0.28.1024.740" timestamp="1588270644363" />
-    <state width="1316" height="347" key="GridCell.Tab.0.right/0.28.1360.740@0.28.1360.740" timestamp="1588351455606" />
+    <state width="1316" height="554" key="GridCell.Tab.0.right/0.28.1360.740@0.28.1360.740" timestamp="1588533479058" />
     <state width="1876" height="866" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822735" />
     <state width="1316" height="159" key="GridCell.Tab.0.right/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
-    <state x="0" y="28" width="992" height="738" key="SettingsEditor" timestamp="1588015129010">
+    <state x="0" y="28" width="992" height="738" key="SettingsEditor" timestamp="1588531396822">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state x="0" y="28" width="992" height="738" key="SettingsEditor/0.28.1360.740@0.28.1360.740" timestamp="1588015129010" />
+    <state x="0" y="28" width="992" height="738" key="SettingsEditor/0.28.1360.740@0.28.1360.740" timestamp="1588531396822" />
     <state x="0" y="36" key="SettingsEditor/0.36.1360.732@0.36.1360.732" timestamp="1587383596395" />
-    <state x="274" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2" timestamp="1588097919098">
+    <state x="274" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2" timestamp="1588351761676">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state x="274" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2/0.28.1360.740@0.28.1360.740" timestamp="1588097919098" />
+    <state x="274" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2/0.28.1360.740@0.28.1360.740" timestamp="1588351761676" />
     <state x="274" y="137" width="802" height="528" key="Vcs.Push.Dialog.v2/0.36.1360.732@0.36.1360.732" timestamp="1587407428154" />
-    <state x="171" y="97" width="633" height="428" key="git4idea.merge.GitPullDialog" timestamp="1588007821556">
+    <state x="171" y="97" width="633" height="428" key="git4idea.merge.GitPullDialog" timestamp="1588531339011">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
-    <state x="171" y="97" width="633" height="428" key="git4idea.merge.GitPullDialog/0.28.1360.740@0.28.1360.740" timestamp="1588007821556" />
+    <state x="171" y="97" width="633" height="428" key="git4idea.merge.GitPullDialog/0.28.1360.740@0.28.1360.740" timestamp="1588531339011" />
     <state x="342" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1587048574269">
       <screen x="0" y="36" width="1360" height="732" />
     </state>
@@ -303,7 +318,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$arduino.coverage" NAME="arduino Coverage Results" MODIFIED="1587910147975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1588351455539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1588533479001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$network.coverage" NAME="network Coverage Results" MODIFIED="1587057492722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

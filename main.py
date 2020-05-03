@@ -50,15 +50,30 @@ def print_office_selection_menu():
     for item in menu:
         if currentName != item[1]:
             currentName = item[1]
-            list_offices_by_company_name.append(currentName,[])
+            list_offices_by_company_name.append([currentName,[]])
             count+=1
-        list_offices_by_company_name[count][1].append([item[0],item[2]])
+        list_offices_by_company_name[count][1].append([item[0],item[2].to_format_string()])
 
     for item in list_offices_by_company_name:
-        print(item[0])
+        print(str(item[0]).upper())
+        line = ""
+        for i in item[0]:
+            line+="-"
+        print(line)
         print( tabulate(item[1], headers=['ID', 'address']))
         print(" ")
     print(" ")
+
+def inputNumber(message):
+    while True:
+        try:
+            userInput = int(input(message))
+        except ValueError:
+            print("Not an integer! Try again.")
+            continue
+        else:
+            return userInput
+            break
 
 # ctrl + c stop
 signal.signal(signal.SIGINT, end_read)
@@ -100,13 +115,10 @@ print("|                               |")
 print("|     Press Ctrl-C to stop.     |")
 print("|_______________________________|")
 print("")
-print_office_selection_menu()
-#TODO: check if number!!
-office_id = ""
-while type(office_id) != type(0):
-    office_id = input("What office do you want to simulate:")
 
-#harcoded office id (sesamstraat 123)
+print_office_selection_menu()
+office_id = inputNumber("What office do you want to simulate:")
+
 info_array = network.get_office_info(office_id)
 
 print("simulated gate:")
