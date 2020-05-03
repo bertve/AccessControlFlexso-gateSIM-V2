@@ -144,7 +144,7 @@ while continue_reading:
         incoming_office_id = incoming_ids_ascii[1]
         incoming_device_id = incoming_ids_ascii[2]
         incoming_token = incoming_ids_ascii[3]
-
+        incoming_data_string=""
         print("incoming user id: "+str(incoming_user_id))
         print("incoming office id: "+str(incoming_office_id))
         print("incoming device id: "+str(incoming_device_id))
@@ -162,7 +162,7 @@ while continue_reading:
             time.sleep(3)
             GPIO.output(RED_LED, GPIO.LOW)
     else:
-        print("response APDU not supported!")
+        print("response APDU not supported or interrupted!")
 
     print("_________________________________")
     print("")
