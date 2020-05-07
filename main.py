@@ -107,9 +107,11 @@ office_id = inputNumber("What office do you want to simulate:")
 
 info_array = network.get_office_info(office_id)
 
+print("")
 print("simulated gate:")
+print("")
 for i in info_array:
-    print(i)
+    print("\t\t"+ i)
 print("")
 
 
