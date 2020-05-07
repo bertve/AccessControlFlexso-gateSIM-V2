@@ -13,20 +13,6 @@ def end_read(signal,frame):
     GPIO.cleanup()
     pn532.close()
 
-def check_office(incoming_office_id):
-    global office_id
-    res = str(office_id) == incoming_office_id
-    if res:
-        print("\tThe correct token has been passed")
-    else:
-        wrong_office = network.get_office_info(incoming_office_id)
-        print("\tAn incorrect token has been passed,")
-        print("\ttoken was meant for office:")
-        for i in wrong_office:
-            print("\t\t"+i)
-
-    return res
-
 def callbackPN532(tag, data):
     global incoming_data
     incoming_data = data
@@ -34,13 +20,13 @@ def callbackPN532(tag, data):
 def check_token(token,id):
     keyValidation = network.validate_token(token,id)
     print( "\t"+keyValidation.message)
-    print()
     return keyValidation.succes
 
-def is_authorized(incoming_user_id,incoming_office_id,device_id,token):
+def is_authorized(incoming_user_id,device_id,token):
+    global office_id
     print("VALIDATION:")
-    keyId = KeyId(int(incoming_user_id),int(incoming_office_id),device_id)
-    return check_office(incoming_office_id) & check_token(token,keyId)
+    keyId = KeyId(int(incoming_user_id),office_id,device_id)
+    return check_token(token,keyId)
 
 def print_office_selection_menu():
     menu = network.get_offices_menu()
@@ -141,17 +127,15 @@ while continue_reading:
         incoming_ids_ascii = bytes.fromhex(incoming_ids_hex).decode("ASCII").split(";")
 
         incoming_user_id = incoming_ids_ascii[0]
-        incoming_office_id = incoming_ids_ascii[1]
-        incoming_device_id = incoming_ids_ascii[2]
-        incoming_token = incoming_ids_ascii[3]
+        incoming_device_id = incoming_ids_ascii[1]
+        incoming_token = incoming_ids_ascii[2]
         incoming_data_string=""
         print("incoming user id: "+str(incoming_user_id))
-        print("incoming office id: "+str(incoming_office_id))
         print("incoming device id: "+str(incoming_device_id))
         print("incoming token: " + str(incoming_token))
         print("")
 
-        if(is_authorized(incoming_user_id,incoming_office_id,incoming_device_id,incoming_token)):
+        if(is_authorized(incoming_user_id,incoming_device_id,incoming_token)):
             print("ACCESS GRANTED")
             GPIO.output(GREEN_LED, GPIO.HIGH)
             time.sleep(3)
@@ -162,7 +146,6 @@ while continue_reading:
             time.sleep(3)
             GPIO.output(RED_LED, GPIO.LOW)
     else:
-        print("response APDU not supported or interrupted!")
-
+        print("response APDU not supported or interrupted")
     print("_________________________________")
     print("")
