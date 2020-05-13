@@ -2,9 +2,11 @@ import RPi.GPIO as GPIO
 import time
 import signal
 import network
+import arduino
 from PN532 import PN532
 from models import KeyId
 from tabulate import tabulate
+import input
 
 def end_read(signal,frame):
     global continue_reading
@@ -50,16 +52,7 @@ def print_office_selection_menu():
         print(" ")
     print(" ")
 
-def inputNumber(message):
-    while True:
-        try:
-            userInput = int(input(message))
-        except ValueError:
-            print("Not an integer! Try again.")
-            continue
-        else:
-            return userInput
-            break
+
 
 # ctrl + c stop
 signal.signal(signal.SIGINT, end_read)
@@ -103,7 +96,7 @@ print("|_______________________________|")
 print("")
 
 print_office_selection_menu()
-office_id = inputNumber("What office do you want to simulate:")
+office_id = input.inputNumber("What office do you want to simulate:")
 
 info_array = network.get_office_info(office_id)
 
@@ -113,7 +106,7 @@ print("")
 for i in info_array:
     print("\t\t"+ i)
 print("")
-
+arduino.print_address_to_lcd(info_array[0])
 
 while continue_reading:
     listen = pn532.listen()
@@ -131,22 +124,28 @@ while continue_reading:
         incoming_user_id = incoming_ids_ascii[0]
         incoming_device_id = incoming_ids_ascii[1]
         incoming_token = incoming_ids_ascii[2]
-        incoming_data_string=""
+        incoming_data=""
         print("incoming user id: "+str(incoming_user_id))
         print("incoming device id: "+str(incoming_device_id))
         print("incoming token: " + str(incoming_token))
         print("")
-
+        message = ""
         if(is_authorized(incoming_user_id,incoming_device_id,incoming_token)):
-            print("ACCESS GRANTED")
+            message = "ACCESS GRANTED"
+            print(message)
+            arduino.open_servo_door()
             GPIO.output(GREEN_LED, GPIO.HIGH)
-            time.sleep(3)
+            time.sleep(10)
             GPIO.output(GREEN_LED, GPIO.LOW)
+            arduino.close_servo_door()
         else:
-            print(" ACCESS DENIED")
+            message = "ACCESS DENIED"
+            print(message)
             GPIO.output(RED_LED, GPIO.HIGH)
             time.sleep(3)
             GPIO.output(RED_LED, GPIO.LOW)
+            arduino.print_to_lcd(message)
+
     else:
         print("response APDU not supported or interrupted")
     print("_________________________________")

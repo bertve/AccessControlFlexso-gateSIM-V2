@@ -15,7 +15,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="support token gen on client ( officeId no longer passed)">
+    <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="refactored">
+      <change afterPath="$PROJECT_DIR$/arduino.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/input.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/testServo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,6 +88,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="arduino" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AccessControlFlexso-gateSIM-V2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/arduino.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="AccessControlFlexso-gateSIM-V2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,9 +154,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="testServo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AccessControlFlexso-gateSIM-V2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/testServo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.testServo" />
+        <item itemvalue="Python.arduino" />
         <item itemvalue="Python.arduino" />
         <item itemvalue="Python.network" />
       </list>
@@ -167,7 +217,11 @@
       <workItem from="1588330542602" duration="14042000" />
       <workItem from="1588531235410" duration="3450000" />
       <workItem from="1588662151891" duration="7489000" />
-      <workItem from="1588860603028" duration="2881000" />
+      <workItem from="1588860603028" duration="3663000" />
+      <workItem from="1588959643149" duration="1087000" />
+      <workItem from="1589120328751" duration="9602000" />
+      <workItem from="1589299492818" duration="5740000" />
+      <workItem from="1589374870603" duration="9309000" />
     </task>
     <task id="LOCAL-00001" summary="added arduino connection">
       <created>1587407418213</created>
@@ -232,7 +286,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588869371090</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="refactored">
+      <created>1588869777572</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1588869777572</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,13 +315,13 @@
     <MESSAGE value="added arduino connection" />
     <MESSAGE value="nfc communication works" />
     <MESSAGE value="authorize person (no Jwt)" />
-    <MESSAGE value="refactored" />
     <MESSAGE value="show address info" />
     <MESSAGE value="support token exchange" />
     <MESSAGE value="deleted json file" />
     <MESSAGE value="bugfixes office selectionmenu" />
     <MESSAGE value="support token gen on client ( officeId no longer passed)" />
-    <option name="LAST_COMMIT_MESSAGE" value="support token gen on client ( officeId no longer passed)" />
+    <MESSAGE value="refactored" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactored" />
   </component>
   <component name="WindowStateProjectService">
     <state x="199" y="108" width="426" height="484" key="FileChooserDialogImpl" timestamp="1587995377180">
@@ -268,9 +329,10 @@
     </state>
     <state x="199" y="108" key="FileChooserDialogImpl/0.28.1360.740@0.28.1360.740" timestamp="1587995377180" />
     <state x="199" y="115" width="426" height="484" key="FileChooserDialogImpl/0.36.1360.732@0.36.1360.732" timestamp="1587047610674" />
-    <state x="541" y="321" width="274" height="174" key="Github.Dialog.Accounts.Choose" timestamp="1588533569821">
-      <screen x="0" y="28" width="1360" height="740" />
+    <state x="407" y="321" width="266" height="174" key="Github.Dialog.Accounts.Choose" timestamp="1588869797698">
+      <screen x="0" y="28" width="1024" height="740" />
     </state>
+    <state x="407" y="321" width="266" height="174" key="Github.Dialog.Accounts.Choose/0.28.1024.740@0.28.1024.740" timestamp="1588869797698" />
     <state x="541" y="321" width="274" height="174" key="Github.Dialog.Accounts.Choose/0.28.1360.740@0.28.1360.740" timestamp="1588533569821" />
     <state x="541" y="326" key="Github.Dialog.Accounts.Choose/0.36.1360.732@0.36.1360.732" timestamp="1587407439383" />
     <state x="498" y="301" key="Github.ShareDialog" timestamp="1587058733942">
@@ -281,43 +343,43 @@
       <screen x="0" y="36" width="1360" height="732" />
     </state>
     <state x="442" y="93" width="466" height="615" key="Github.UntrackedFilesDialog/0.36.1360.732@0.36.1360.732" timestamp="1587058751132" />
-    <state width="980" height="228" key="GridCell.Tab.0.bottom" timestamp="1588869647845">
-      <screen x="0" y="28" width="1024" height="740" />
+    <state width="1876" height="448" key="GridCell.Tab.0.bottom" timestamp="1589387695395">
+      <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="980" height="228" key="GridCell.Tab.0.bottom/0.28.1024.740@0.28.1024.740" timestamp="1588869647845" />
+    <state width="980" height="228" key="GridCell.Tab.0.bottom/0.28.1024.740@0.28.1024.740" timestamp="1588869654119" />
     <state width="1316" height="554" key="GridCell.Tab.0.bottom/0.28.1360.740@0.28.1360.740" timestamp="1588662939185" />
-    <state width="1876" height="866" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822736" />
+    <state width="1876" height="448" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695395" />
     <state width="1316" height="159" key="GridCell.Tab.0.bottom/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
-    <state width="980" height="228" key="GridCell.Tab.0.center" timestamp="1588869647844">
-      <screen x="0" y="28" width="1024" height="740" />
+    <state width="1876" height="448" key="GridCell.Tab.0.center" timestamp="1589387695393">
+      <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="980" height="228" key="GridCell.Tab.0.center/0.28.1024.740@0.28.1024.740" timestamp="1588869647844" />
+    <state width="980" height="228" key="GridCell.Tab.0.center/0.28.1024.740@0.28.1024.740" timestamp="1588869654116" />
     <state width="1316" height="554" key="GridCell.Tab.0.center/0.28.1360.740@0.28.1360.740" timestamp="1588662939184" />
-    <state width="1876" height="866" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822734" />
+    <state width="1876" height="448" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695393" />
     <state width="1316" height="159" key="GridCell.Tab.0.center/0.36.1360.732@0.36.1360.732" timestamp="1587486335569" />
-    <state width="980" height="228" key="GridCell.Tab.0.left" timestamp="1588869647843">
-      <screen x="0" y="28" width="1024" height="740" />
+    <state width="1876" height="448" key="GridCell.Tab.0.left" timestamp="1589387695392">
+      <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="980" height="228" key="GridCell.Tab.0.left/0.28.1024.740@0.28.1024.740" timestamp="1588869647843" />
+    <state width="980" height="228" key="GridCell.Tab.0.left/0.28.1024.740@0.28.1024.740" timestamp="1588869654115" />
     <state width="1316" height="554" key="GridCell.Tab.0.left/0.28.1360.740@0.28.1360.740" timestamp="1588662939183" />
-    <state width="1876" height="866" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822733" />
+    <state width="1876" height="448" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695392" />
     <state width="1316" height="159" key="GridCell.Tab.0.left/0.36.1360.732@0.36.1360.732" timestamp="1587486335568" />
-    <state width="980" height="228" key="GridCell.Tab.0.right" timestamp="1588869647845">
-      <screen x="0" y="28" width="1024" height="740" />
+    <state width="1876" height="448" key="GridCell.Tab.0.right" timestamp="1589387695394">
+      <screen x="0" y="28" width="1920" height="1052" />
     </state>
-    <state width="980" height="228" key="GridCell.Tab.0.right/0.28.1024.740@0.28.1024.740" timestamp="1588869647845" />
+    <state width="980" height="228" key="GridCell.Tab.0.right/0.28.1024.740@0.28.1024.740" timestamp="1588869654117" />
     <state width="1316" height="554" key="GridCell.Tab.0.right/0.28.1360.740@0.28.1360.740" timestamp="1588662939184" />
-    <state width="1876" height="866" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1587846822735" />
+    <state width="1876" height="448" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695394" />
     <state width="1316" height="159" key="GridCell.Tab.0.right/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
     <state x="0" y="28" width="992" height="738" key="SettingsEditor" timestamp="1588531396822">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
     <state x="0" y="28" width="992" height="738" key="SettingsEditor/0.28.1360.740@0.28.1360.740" timestamp="1588531396822" />
     <state x="0" y="36" key="SettingsEditor/0.36.1360.732@0.36.1360.732" timestamp="1587383596395" />
-    <state x="206" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2" timestamp="1588869420647">
+    <state x="206" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2" timestamp="1588869791811">
       <screen x="0" y="28" width="1024" height="740" />
     </state>
-    <state x="206" y="130" key="Vcs.Push.Dialog.v2/0.28.1024.740@0.28.1024.740" timestamp="1588869420647" />
+    <state x="206" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2/0.28.1024.740@0.28.1024.740" timestamp="1588869791811" />
     <state x="274" y="130" width="802" height="536" key="Vcs.Push.Dialog.v2/0.28.1360.740@0.28.1360.740" timestamp="1588533563674" />
     <state x="274" y="137" width="802" height="528" key="Vcs.Push.Dialog.v2/0.36.1360.732@0.36.1360.732" timestamp="1587407428154" />
     <state x="171" y="97" width="633" height="428" key="git4idea.merge.GitPullDialog" timestamp="1588531339011">
@@ -336,7 +398,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$arduino.coverage" NAME="arduino Coverage Results" MODIFIED="1587910147975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1588869654041" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1589387695329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$testServo.coverage" NAME="testServo Coverage Results" MODIFIED="1589302583830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$network.coverage" NAME="network Coverage Results" MODIFIED="1587057492722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$ardiuno.coverage" NAME="arduino Coverage Results" MODIFIED="1589127653658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
