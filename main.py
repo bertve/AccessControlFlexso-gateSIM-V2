@@ -75,6 +75,24 @@ RED_LED = 6
 GPIO.setup(RED_LED, GPIO.OUT)
 GPIO.output(RED_LED, GPIO.LOW)
 
+def open_door():
+    message = "ACCESS GRANTED"
+    print(message)
+    arduino.open_servo_door()
+    GPIO.output(GREEN_LED, GPIO.HIGH)
+    time.sleep(10)
+    arduino.close_servo_door()
+    GPIO.output(GREEN_LED, GPIO.LOW)
+
+def access_denied():
+    message = "ACCESS DENIED"
+    arduino.print_to_lcd(message)
+    print(message)
+    GPIO.output(RED_LED, GPIO.HIGH)
+    time.sleep(3)
+    GPIO.output(RED_LED, GPIO.LOW)
+
+
 # Welcome message
 print(" _______________________________ ")
 print("|                               |")
@@ -131,22 +149,12 @@ while continue_reading:
         print("")
         message = ""
         if(is_authorized(incoming_user_id,incoming_device_id,incoming_token)):
-            message = "ACCESS GRANTED"
-            print(message)
-            arduino.open_servo_door()
-            GPIO.output(GREEN_LED, GPIO.HIGH)
-            time.sleep(10)
-            GPIO.output(GREEN_LED, GPIO.LOW)
-            arduino.close_servo_door()
+            open_door()
         else:
-            message = "ACCESS DENIED"
-            print(message)
-            GPIO.output(RED_LED, GPIO.HIGH)
-            time.sleep(3)
-            GPIO.output(RED_LED, GPIO.LOW)
-            arduino.print_to_lcd(message)
+            access_denied()
 
     else:
         print("response APDU not supported or interrupted")
+        access_denied()
     print("_________________________________")
     print("")

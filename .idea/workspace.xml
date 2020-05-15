@@ -16,9 +16,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6be97609-e3d0-4eb5-b27d-a30ef147a892" name="Default Changelist" comment="refactored">
-      <change afterPath="$PROJECT_DIR$/arduino.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/input.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/testServo.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -222,6 +219,10 @@
       <workItem from="1589120328751" duration="9602000" />
       <workItem from="1589299492818" duration="5740000" />
       <workItem from="1589374870603" duration="9309000" />
+      <workItem from="1589391351889" duration="642000" />
+      <workItem from="1589398511231" duration="2304000" />
+      <workItem from="1589462041861" duration="637000" />
+      <workItem from="1589553789910" duration="1588000" />
     </task>
     <task id="LOCAL-00001" summary="added arduino connection">
       <created>1587407418213</created>
@@ -343,34 +344,50 @@
       <screen x="0" y="36" width="1360" height="732" />
     </state>
     <state x="442" y="93" width="466" height="615" key="Github.UntrackedFilesDialog/0.36.1360.732@0.36.1360.732" timestamp="1587058751132" />
-    <state width="1876" height="448" key="GridCell.Tab.0.bottom" timestamp="1589387695395">
+    <state width="1876" height="447" key="GridCell.Tab.0.bottom" timestamp="1589555320185">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state width="980" height="228" key="GridCell.Tab.0.bottom/0.28.1024.740@0.28.1024.740" timestamp="1588869654119" />
     <state width="1316" height="554" key="GridCell.Tab.0.bottom/0.28.1360.740@0.28.1360.740" timestamp="1588662939185" />
-    <state width="1876" height="448" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695395" />
+    <state width="1876" height="447" key="GridCell.Tab.0.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1589555320185" />
     <state width="1316" height="159" key="GridCell.Tab.0.bottom/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
-    <state width="1876" height="448" key="GridCell.Tab.0.center" timestamp="1589387695393">
+    <state width="1876" height="447" key="GridCell.Tab.0.center" timestamp="1589555320183">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state width="980" height="228" key="GridCell.Tab.0.center/0.28.1024.740@0.28.1024.740" timestamp="1588869654116" />
     <state width="1316" height="554" key="GridCell.Tab.0.center/0.28.1360.740@0.28.1360.740" timestamp="1588662939184" />
-    <state width="1876" height="448" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695393" />
+    <state width="1876" height="447" key="GridCell.Tab.0.center/0.28.1920.1052@0.28.1920.1052" timestamp="1589555320183" />
     <state width="1316" height="159" key="GridCell.Tab.0.center/0.36.1360.732@0.36.1360.732" timestamp="1587486335569" />
-    <state width="1876" height="448" key="GridCell.Tab.0.left" timestamp="1589387695392">
+    <state width="1876" height="447" key="GridCell.Tab.0.left" timestamp="1589555320182">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state width="980" height="228" key="GridCell.Tab.0.left/0.28.1024.740@0.28.1024.740" timestamp="1588869654115" />
     <state width="1316" height="554" key="GridCell.Tab.0.left/0.28.1360.740@0.28.1360.740" timestamp="1588662939183" />
-    <state width="1876" height="448" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695392" />
+    <state width="1876" height="447" key="GridCell.Tab.0.left/0.28.1920.1052@0.28.1920.1052" timestamp="1589555320182" />
     <state width="1316" height="159" key="GridCell.Tab.0.left/0.36.1360.732@0.36.1360.732" timestamp="1587486335568" />
-    <state width="1876" height="448" key="GridCell.Tab.0.right" timestamp="1589387695394">
+    <state width="1876" height="447" key="GridCell.Tab.0.right" timestamp="1589555320184">
       <screen x="0" y="28" width="1920" height="1052" />
     </state>
     <state width="980" height="228" key="GridCell.Tab.0.right/0.28.1024.740@0.28.1024.740" timestamp="1588869654117" />
     <state width="1316" height="554" key="GridCell.Tab.0.right/0.28.1360.740@0.28.1360.740" timestamp="1588662939184" />
-    <state width="1876" height="448" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1589387695394" />
+    <state width="1876" height="447" key="GridCell.Tab.0.right/0.28.1920.1052@0.28.1920.1052" timestamp="1589555320184" />
     <state width="1316" height="159" key="GridCell.Tab.0.right/0.36.1360.732@0.36.1360.732" timestamp="1587486335570" />
+    <state width="1876" height="341" key="GridCell.Tab.1.bottom" timestamp="1589401825325">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1876" height="341" key="GridCell.Tab.1.bottom/0.28.1920.1052@0.28.1920.1052" timestamp="1589401825325" />
+    <state width="1876" height="341" key="GridCell.Tab.1.center" timestamp="1589401825322">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1876" height="341" key="GridCell.Tab.1.center/0.28.1920.1052@0.28.1920.1052" timestamp="1589401825322" />
+    <state width="1876" height="341" key="GridCell.Tab.1.left" timestamp="1589401825321">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1876" height="341" key="GridCell.Tab.1.left/0.28.1920.1052@0.28.1920.1052" timestamp="1589401825321" />
+    <state width="1876" height="341" key="GridCell.Tab.1.right" timestamp="1589401825324">
+      <screen x="0" y="28" width="1920" height="1052" />
+    </state>
+    <state width="1876" height="341" key="GridCell.Tab.1.right/0.28.1920.1052@0.28.1920.1052" timestamp="1589401825324" />
     <state x="0" y="28" width="992" height="738" key="SettingsEditor" timestamp="1588531396822">
       <screen x="0" y="28" width="1360" height="740" />
     </state>
@@ -398,7 +415,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$arduino.coverage" NAME="arduino Coverage Results" MODIFIED="1587910147975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1589387695329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$main.coverage" NAME="main Coverage Results" MODIFIED="1589555320115" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$testServo.coverage" NAME="testServo Coverage Results" MODIFIED="1589302583830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$network.coverage" NAME="network Coverage Results" MODIFIED="1587057492722" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/AccessControlFlexso_gateSIM_V2$ardiuno.coverage" NAME="arduino Coverage Results" MODIFIED="1589127653658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
